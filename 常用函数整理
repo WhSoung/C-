@@ -1,0 +1,42 @@
+常用最大值函数
+int maxnum(int a,int b,int c){
+    int max=a;
+    if(b>max){
+        max=b;
+    }
+    if(c>max){
+        max=c;
+    }
+    return max
+计算最小公倍数与最大公约数
+for(int i = min(a, b); i >= 1; i--) { // 从较小的数字开始向下循环
+        if((a % i == 0) && (b % i == 0)) { // 如果i是a和b的公约数
+            gcd = i; // 更新gcd
+            break; // 找到后即退出循环
+        }
+    }
+    int lcm = (a * b) / gcd; // 计算最小公倍数
+判断是否是“完数”
+bool iswanshu(int n) {
+    int sum = 0;
+    // 找出所有真因子并计算它们的和
+    for (int i = 1; i <= n / 2; i++) {
+        if (n % i == 0) {
+            sum += i;
+        }
+    }
+    // 如果真因子之和等于 n，则 n 是完全数
+    if (sum == n && n != 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}//判断是否为完数
+递归求解斐波那契数列
+int feibo(int n){
+    if(n==1||n==2)
+        return 1;
+    else
+        return feibo(n-1)+feibo(n-2);
+}
