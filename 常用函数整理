@@ -16,6 +16,17 @@ for(int i = min(a, b); i >= 1; i--) { // 从较小的数字开始向下循环
         }
     }
     int lcm = (a * b) / gcd; // 计算最小公倍数
+计算最大公倍数
+int commondiviser(int a,int b){
+    int gcd=1;
+    for(int i=min(a,b);i>=1;i--){
+        if((a%i==0)&&(b%i==0)){
+            gcd=i;
+            break;
+        }
+    }
+        return gcd;
+}
 判断是否是“完数”
 bool iswanshu(int n) {
     int sum = 0;
@@ -39,4 +50,19 @@ int feibo(int n){
         return 1;
     else
         return feibo(n-1)+feibo(n-2);
+}
+计算平方根 直到精度满足所需
+double squareRoot(double n, double epsilon = 0.00001) {
+    // 初始化初始值为 n 的一半
+    double x = n / 2.0;
+    // 迭代直到满足精度要求
+    while (true) {
+        double nextX = (x + n / x) / 2.0;
+        // 如果新的近似值与上一个近似值的差小于精度要求，则返回近似值
+        if (abs(nextX - x) < epsilon) {
+            return nextX;
+        }
+        // 更新近似值
+        x = nextX;
+    }
 }
