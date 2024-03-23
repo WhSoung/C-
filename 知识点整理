@@ -1,0 +1,7 @@
+int length = static_cast<int>(str.size()); // 将 unsigned long int 转换为 int
+把字符串存入字符数组
+string str;
+    cin>>str;
+    int length = static_cast<int>(str.size()); // 将 unsigned long int 转换为 int
+    char cha[length+1];
+    str.copy(cha, length);
